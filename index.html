@@ -45,40 +45,129 @@
         .nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(99,102,241,0.4)}
 
         /* HERO */
-        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;padding:120px 40px 80px;overflow:hidden}
+        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;padding:140px 40px 100px;overflow:hidden}
         .hero-bg{position:absolute;inset:0}
-        .hero-orb{position:absolute;border-radius:50%;filter:blur(120px);animation:orb-float 12s ease-in-out infinite}
-        .orb-1{width:600px;height:600px;top:-200px;right:-100px;background:rgba(99,102,241,0.15);animation-delay:0s}
-        .orb-2{width:500px;height:500px;bottom:-250px;left:-150px;background:rgba(6,182,212,0.12);animation-delay:-4s}
-        .orb-3{width:400px;height:400px;top:40%;left:50%;background:rgba(236,72,153,0.08);animation-delay:-8s}
-        @keyframes orb-float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,30px) scale(0.95)}}
+        .hero-orb{position:absolute;border-radius:50%;filter:blur(140px);animation:orb-float 14s ease-in-out infinite}
+        .orb-1{width:700px;height:700px;top:-250px;right:-150px;background:rgba(99,102,241,0.12);animation-delay:0s}
+        .orb-2{width:600px;height:600px;bottom:-300px;left:-200px;background:rgba(6,182,212,0.1);animation-delay:-5s}
+        .orb-3{width:500px;height:500px;top:30%;left:45%;background:rgba(236,72,153,0.06);animation-delay:-9s}
+        @keyframes orb-float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.08)}66%{transform:translate(-30px,40px) scale(0.92)}}
 
-        .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse at center,black 20%,transparent 70%)}
+        .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.012) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.012) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse at center,black 15%,transparent 65%);animation:grid-drift 25s linear infinite}
+        @keyframes grid-drift{0%{transform:translate(0,0)}100%{transform:translate(80px,80px)}}
 
-        .hero-content{position:relative;z-index:10;text-align:center;max-width:900px}
-        .hero-status{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:100px;font-size:0.8rem;color:var(--green);font-weight:600;margin-bottom:32px}
+        .hero-particles{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+        .hero-particle{position:absolute;width:2px;height:2px;background:var(--accent);border-radius:50%;opacity:0;animation:particle-float linear infinite}
+        @keyframes particle-float{0%{transform:translateY(100vh) scale(0);opacity:0}10%{opacity:.4}90%{opacity:.4}100%{transform:translateY(-10vh) scale(1);opacity:0}}
+
+        .hero-mouse-glow{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,0.06),transparent 70%);pointer-events:none;transition:transform .15s ease-out;transform:translate(-50%,-50%);z-index:1}
+
+        .hero-content{position:relative;z-index:10;text-align:center;max-width:950px}
+
+        /* Avatar */
+        .hero-avatar-wrap{position:relative;width:150px;height:150px;margin:0 auto 36px}
+        .hero-avatar{width:150px;height:150px;border-radius:32px;object-fit:cover;position:relative;z-index:2;animation:avatar-bob 6s ease-in-out infinite;transition:transform .3s}
+        .hero-avatar:hover{transform:scale(1.05)}
+        @keyframes avatar-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+        .hero-avatar-glow{position:absolute;inset:-4px;border-radius:36px;background:conic-gradient(from 0deg,var(--primary),var(--accent),var(--pink),var(--primary));filter:blur(16px);opacity:.35;animation:glow-rotate 6s linear infinite;z-index:0}
+        @keyframes glow-rotate{0%{filter:blur(16px) hue-rotate(0deg)}100%{filter:blur(16px) hue-rotate(360deg)}}
+        .hero-avatar-border{position:absolute;inset:-2px;border-radius:34px;background:conic-gradient(from 0deg,var(--primary),var(--accent),var(--pink),var(--primary));z-index:1;animation:border-spin 4s linear infinite}
+        @keyframes border-spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+        .hero-avatar-border::after{content:'';position:absolute;inset:2px;border-radius:32px;background:var(--bg)}
+        .hero-avatar-online{position:absolute;bottom:8px;right:8px;width:18px;height:18px;background:var(--green);border:3px solid var(--bg);border-radius:50%;z-index:3;animation:pulse 2s infinite}
+
+        /* Status badge */
+        .hero-status{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.15);border-radius:100px;font-size:0.8rem;color:var(--green);font-weight:600;margin-bottom:28px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
         .status-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
-        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
 
-        .hero-avatar{width:140px;height:140px;border-radius:32px;margin:0 auto 40px;box-shadow:0 0 80px rgba(99,102,241,0.25);border:2px solid rgba(99,102,241,0.3);animation:avatar-float 8s ease-in-out infinite}
-        @keyframes avatar-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+        .hero h1{font-size:clamp(3.2rem,7.5vw,5.8rem);font-weight:900;letter-spacing:-3.5px;line-height:1.03;margin-bottom:10px}
+        .hero h1 .gradient{background:linear-gradient(135deg,var(--primary) 0%,var(--accent) 50%,var(--pink) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
-        .hero h1{font-size:clamp(3rem,7vw,5.5rem);font-weight:900;letter-spacing:-3px;line-height:1.05;margin-bottom:24px}
-        .hero h1 .gradient{background:linear-gradient(135deg,var(--primary),var(--accent),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-        .hero h1 .highlight{color:var(--accent);-webkit-text-fill-color:var(--accent)}
+        .hero-typewriter{font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:700;color:var(--accent);margin-bottom:20px;min-height:2em;display:flex;align-items:center;justify-content:center;gap:4px}
+        .typewriter-text{overflow:hidden;white-space:nowrap;border-right:2px solid var(--accent);animation:blink-cursor .8s step-end infinite}
+        @keyframes blink-cursor{0%,50%{border-color:var(--accent)}51%,100%{border-color:transparent}}
 
-        .hero-sub{font-size:1.2rem;color:var(--muted);max-width:650px;margin:0 auto 40px;line-height:1.7}
+        .hero-sub{font-size:1.1rem;color:var(--muted);max-width:620px;margin:0 auto 36px;line-height:1.8}
         .hero-sub strong{color:var(--text);font-weight:600}
 
-        .hero-tags{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:48px}
-        .hero-tag{padding:6px 14px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:8px;font-size:0.8rem;color:var(--muted);font-weight:500}
+        .hero-tags{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:40px}
+        .hero-tag{padding:6px 14px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:8px;font-size:0.78rem;color:var(--muted);font-weight:500;transition:all .3s}
+        .hero-tag:hover{border-color:var(--primary);color:var(--primary)}
 
-        .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+        .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:12px}
         .btn{padding:14px 28px;border-radius:12px;font-size:0.9rem;font-weight:600;text-decoration:none;transition:all .3s;display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer}
-        .btn-fill{background:linear-gradient(135deg,var(--primary),#4F46E5);color:white;box-shadow:0 4px 20px rgba(99,102,241,0.35)}
-        .btn-fill:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(99,102,241,0.5)}
+        .btn-fill{background:linear-gradient(135deg,var(--primary),#4F46E5);color:white;box-shadow:0 4px 24px rgba(99,102,241,0.35)}
+        .btn-fill:hover{transform:translateY(-2px);box-shadow:0 8px 36px rgba(99,102,241,0.5)}
         .btn-outline{background:transparent;color:var(--text);border:1px solid var(--border)}
         .btn-outline:hover{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.15);transform:translateY(-2px)}
+
+        /* Social strip */
+        .hero-socials{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:32px}
+        .hero-social{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.03);border:1px solid var(--border);text-decoration:none;font-size:1rem;transition:all .3s;position:relative}
+        .hero-social:hover{transform:translateY(-3px) scale(1.1);box-shadow:0 6px 20px rgba(0,0,0,0.3)}
+        .hero-social::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);padding:4px 10px;background:var(--bg3);border:1px solid var(--border);border-radius:6px;font-size:0.7rem;color:var(--text);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
+        .hero-social:hover::after{opacity:1}
+        .hero-social[data-c="github"]:hover{border-color:#8b5cf6;color:#8b5cf6}
+        .hero-social[data-c="linkedin"]:hover{border-color:#0A66C2;color:#0A66C2}
+        .hero-social[data-c="x"]:hover{border-color:#fff;color:#fff}
+        .hero-social[data-c="devto"]:hover{border-color:#fff;color:#fff;background:#0A0A0A}
+        .hero-social[data-c="hashnode"]:hover{border-color:#2962FF;color:#2962FF}
+        .hero-social[data-c="medium"]:hover{border-color:#fff;color:#fff}
+        .hero-social[data-c="producthunt"]:hover{border-color:#DA552F;color:#DA552F}
+        .hero-social[data-c="hackernews"]:hover{border-color:#FF6600;color:#FF6600}
+        .hero-social[data-c="reddit"]:hover{border-color:#FF4500;color:#FF4500}
+        .hero-social[data-c="quora"]:hover{border-color:#A82400;color:#A82400}
+        .hero-social[data-c="youtube"]:hover{border-color:#FF0000;color:#FF0000}
+        .hero-social[data-c="tryhackme"]:hover{border-color:#88cc14;color:#88cc14}
+        .hero-social[data-c="hackthebox"]:hover{border-color:#9FEF00;color:#9FEF00}
+        .hero-social[data-c="hackerone"]:hover{border-color:#fff;color:#fff}
+        .hero-social[data-c="email"]:hover{border-color:var(--accent);color:var(--accent)}
+
+        /* Credibility strip */
+        .hero-cred{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;padding:20px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+        .hero-cred-item{display:flex;align-items:center;gap:6px;font-size:0.8rem;color:var(--muted);font-weight:500}
+        .hero-cred-item .ci{color:var(--primary);font-weight:700}
+
+        /* Quick links */
+        .hero-quick{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:20px;margin-bottom:8px}
+        .hero-quick-link{font-size:0.78rem;color:var(--muted);text-decoration:none;font-weight:500;transition:color .3s;display:inline-flex;align-items:center;gap:4px}
+        .hero-quick-link:hover{color:var(--primary)}
+
+        /* GitHub stats strip */
+        .gh-stats-strip{display:flex;justify-content:center;align-items:center;gap:0;padding:24px 40px;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+        .gh-stat{display:flex;flex-direction:column;align-items:center;gap:2px;padding:0 28px}
+        .gh-stat-num{font-size:1.6rem;font-weight:900;line-height:1}
+        .gh-stat-label{font-size:0.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:500}
+        .gh-stat-divider{width:1px;height:36px;background:var(--border)}
+
+        /* FEATURED PRODUCTS */
+        .featured-section{padding:80px 40px;position:relative}
+        .featured-label{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.12);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:16px}
+        .featured-title{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;letter-spacing:-1px;margin-bottom:12px}
+        .featured-desc{font-size:1rem;color:var(--muted);max-width:550px;line-height:1.7;margin-bottom:48px}
+        .featured-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+        .featured-card{padding:32px;background:var(--card);border:1px solid var(--border);border-radius:20px;transition:all .4s;position:relative;overflow:hidden;text-decoration:none;color:var(--text);display:block}
+        .featured-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;opacity:0;transition:opacity .4s}
+        .featured-card:hover{transform:translateY(-4px);box-shadow:0 16px 60px rgba(0,0,0,0.3);border-color:rgba(99,102,241,0.3)}
+        .featured-card:hover::before{opacity:1}
+        .featured-card:nth-child(1)::before{background:linear-gradient(90deg,#EF4444,#F97316)}
+        .featured-card:nth-child(2)::before{background:linear-gradient(90deg,#6366F1,#3B82F6)}
+        .featured-card:nth-child(3)::before{background:linear-gradient(90deg,#10B981,#06B6D4)}
+        .featured-card:nth-child(4)::before{background:linear-gradient(90deg,#F59E0B,#EC4899)}
+        .featured-card-header{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+        .featured-card-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+        .fci-1{background:linear-gradient(135deg,rgba(239,68,68,0.15),rgba(239,68,68,0.05))}
+        .fci-2{background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(99,102,241,0.05))}
+        .fci-3{background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(16,185,129,0.05))}
+        .fci-4{background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(245,158,11,0.05))}
+        .featured-card-header h3{font-size:1.1rem;font-weight:700;margin-bottom:2px}
+        .featured-card-header .fc-tag{display:inline-block;padding:3px 8px;background:rgba(99,102,241,0.1);border-radius:5px;font-size:0.65rem;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:1px}
+        .featured-card p{color:var(--muted);font-size:0.88rem;line-height:1.6;margin-bottom:16px}
+        .featured-card-tech{display:flex;flex-wrap:wrap;gap:5px}
+        .featured-card-tech span{padding:3px 9px;background:rgba(255,255,255,0.03);border:1px solid var(--border);border-radius:5px;font-size:0.72rem;color:var(--muted);font-weight:500}
+        .featured-card-arrow{position:absolute;top:24px;right:24px;color:var(--muted);font-size:1.2rem;transition:all .3s;opacity:0;transform:translateX(-4px)}
+        .featured-card:hover .featured-card-arrow{opacity:1;transform:translateX(0)}
 
         /* SECTIONS */
         section{padding:120px 40px}
@@ -277,12 +366,22 @@
         <div class="hero-orb orb-2"></div>
         <div class="hero-orb orb-3"></div>
         <div class="hero-grid"></div>
+        <div class="hero-particles" id="particles"></div>
     </div>
+    <div class="hero-mouse-glow" id="mouseGlow"></div>
     <div class="hero-content">
         <div class="hero-status"><span class="status-dot"></span>Open to Opportunities</div>
-        <img src="https://avatars.githubusercontent.com/ganeshkrishnareddy?v=4&s=280" alt="P Ganesh Krishna Reddy" class="hero-avatar">
+        <div class="hero-avatar-wrap">
+            <div class="hero-avatar-glow"></div>
+            <div class="hero-avatar-border"></div>
+            <img src="https://avatars.githubusercontent.com/ganeshkrishnareddy?v=4&s=280" alt="P Ganesh Krishna Reddy" class="hero-avatar">
+            <div class="hero-avatar-online"></div>
+        </div>
         <h1>P Ganesh Krishna<br><span class="gradient">Reddy</span></h1>
-        <p class="hero-sub"><strong>Secure Software Engineer</strong> building <strong>autonomous AI security systems</strong> and scalable applications with security-first design. Specializing in offensive security, multi-agent architectures, and full-stack development.</p>
+        <div class="hero-typewriter">
+            <span class="typewriter-text" id="typewriter"></span>
+        </div>
+        <p class="hero-sub">Building <strong>autonomous AI security systems</strong> and scalable applications with a <strong>security-first mindset</strong>. Specializing in offensive security, multi-agent architectures, and full-stack development.</p>
         <div class="hero-tags">
             <span class="hero-tag">Cybersecurity</span>
             <span class="hero-tag">AI / ML</span>
@@ -292,9 +391,120 @@
             <span class="hero-tag">TypeScript</span>
         </div>
         <div class="hero-cta">
-            <a href="#projects" class="btn btn-fill">View My Work</a>
+            <a href="#products" class="btn btn-fill">View My Work</a>
             <a href="https://linkedin.com/in/pganeshkrishnareddy" target="_blank" class="btn btn-outline">LinkedIn</a>
             <a href="https://pganeshkrishnareddy.vercel.app" target="_blank" class="btn btn-outline">Portfolio</a>
+        </div>
+        <div class="hero-quick">
+            <a href="#products" class="hero-quick-link">📋 View Projects</a>
+            <a href="https://github.com/ganeshkrishnareddy" target="_blank" class="hero-quick-link">⌘ GitHub</a>
+            <a href="mailto:pganeshkrishnareddy@gmail.com" class="hero-quick-link">✉ Contact</a>
+            <a href="https://linkedin.com/in/pganeshkrishnareddy" target="_blank" class="hero-quick-link">💼 Schedule a Call</a>
+        </div>
+        <div class="hero-socials">
+            <a href="https://github.com/ganeshkrishnareddy" target="_blank" class="hero-social" data-c="github" data-tip="GitHub">⌘</a>
+            <a href="https://linkedin.com/in/pganeshkrishnareddy" target="_blank" class="hero-social" data-c="linkedin" data-tip="LinkedIn">in</a>
+            <a href="https://x.com/_this_is_ganesh" target="_blank" class="hero-social" data-c="x" data-tip="X / Twitter">𝕏</a>
+            <a href="https://dev.to/pganeshkrishnareddy" target="_blank" class="hero-social" data-c="devto" data-tip="DEV.to">DEV</a>
+            <a href="https://hashnode.com/@pganeshkrishnareddy" target="_blank" class="hero-social" data-c="hashnode" data-tip="Hashnode">H</a>
+            <a href="https://medium.com/@pganeshkrishnareddy" target="_blank" class="hero-social" data-c="medium" data-tip="Medium">M</a>
+            <a href="https://www.producthunt.com/@pganeshkrishnareddy" target="_blank" class="hero-social" data-c="producthunt" data-tip="Product Hunt">PH</a>
+            <a href="https://news.ycombinator.com/user?id=pganeshkrishnareddy" target="_blank" class="hero-social" data-c="hackernews" data-tip="Hacker News">HN</a>
+            <a href="https://reddit.com/u/pganeshkrishnareddy" target="_blank" class="hero-social" data-c="reddit" data-tip="Reddit">R</a>
+            <a href="https://www.quora.com/profile/P-Ganesh-Krishna-Reddy" target="_blank" class="hero-social" data-c="quora" data-tip="Quora">Q</a>
+            <a href="https://youtube.com/@pganeshkrishnareddy" target="_blank" class="hero-social" data-c="youtube" data-tip="YouTube">▶</a>
+            <a href="https://tryhackme.com/p/pganeshkrishnareddy" target="_blank" class="hero-social" data-c="tryhackme" data-tip="TryHackMe">THM</a>
+            <a href="https://app.hackthebox.com/profile/pganeshkrishnareddy" target="_blank" class="hero-social" data-c="hackthebox" data-tip="Hack The Box">HTB</a>
+            <a href="https://hackerone.com/pganeshkrishnareddy" target="_blank" class="hero-social" data-c="hackerone" data-tip="HackerOne">H1</a>
+            <a href="mailto:pganeshkrishnareddy@gmail.com" class="hero-social" data-c="email" data-tip="Email">✉</a>
+        </div>
+        <div class="hero-cred">
+            <div class="hero-cred-item"><span class="ci">✦</span> Founder @ ProgVision</div>
+            <div class="hero-cred-item"><span class="ci">✦</span> CompTIA CySA+ & PenTest+</div>
+            <div class="hero-cred-item"><span class="ci">✦</span> 50+ Vulnerabilities Found</div>
+            <div class="hero-cred-item"><span class="ci">✦</span> 10+ Production Systems</div>
+            <div class="hero-cred-item"><span class="ci">✦</span> Microsoft Build Hackathon</div>
+            <div class="hero-cred-item"><span class="ci">✦</span> 3+ Bug Bounty Platforms</div>
+        </div>
+    </div>
+</section>
+
+<!-- GITHUB STATS STRIP -->
+<div class="gh-stats-strip">
+    <div class="gh-stat"><span class="gh-stat-num" style="color:var(--primary)">49+</span><span class="gh-stat-label">Repositories</span></div>
+    <div class="gh-stat-divider"></div>
+    <div class="gh-stat"><span class="gh-stat-num" style="color:var(--accent)">13</span><span class="gh-stat-label">AI Agents</span></div>
+    <div class="gh-stat-divider"></div>
+    <div class="gh-stat"><span class="gh-stat-num" style="color:var(--green)">50+</span><span class="gh-stat-label">Vulns Found</span></div>
+    <div class="gh-stat-divider"></div>
+    <div class="gh-stat"><span class="gh-stat-num" style="color:var(--pink)">8+</span><span class="gh-stat-label">Languages</span></div>
+    <div class="gh-stat-divider"></div>
+    <div class="gh-stat"><span class="gh-stat-num" style="color:#F59E0B">5+</span><span class="gh-stat-label">Live Projects</span></div>
+</div>
+
+<!-- FEATURED PRODUCTS -->
+<section class="featured-section" id="products">
+    <div class="container">
+        <div class="featured-label fade-in">✦ Featured</div>
+        <h2 class="featured-title fade-in">What I've Built</h2>
+        <p class="featured-desc fade-in">Open-source tools, AI systems, and full-stack apps — all built with a security-first approach.</p>
+        <div class="featured-grid">
+            <a href="https://github.com/ganeshkrishnareddy/pentestcode" target="_blank" class="featured-card fade-in">
+                <div class="featured-card-header">
+                    <div class="featured-card-icon fci-1">🔐</div>
+                    <div>
+                        <h3>PentestCode</h3>
+                        <span class="fc-tag">Flagship</span>
+                    </div>
+                </div>
+                <p>Multi-agent AI penetration testing system with 13 specialized agents, 18+ tools, and autonomous vulnerability discovery.</p>
+                <div class="featured-card-tech">
+                    <span>TypeScript</span><span>AI/LLM</span><span>Multi-Agent</span><span>Cross-Platform</span>
+                </div>
+                <span class="featured-card-arrow">→</span>
+            </a>
+            <a href="https://github.com/ganeshkrishnareddy/FlowMatch" target="_blank" class="featured-card fade-in">
+                <div class="featured-card-header">
+                    <div class="featured-card-icon fci-2">🔄</div>
+                    <div>
+                        <h3>FlowMatch</h3>
+                        <span class="fc-tag">Open Source</span>
+                    </div>
+                </div>
+                <p>Intelligent workflow automation platform with smart matching algorithms and adaptive flow control.</p>
+                <div class="featured-card-tech">
+                    <span>TypeScript</span><span>MIT License</span><span>Automation</span>
+                </div>
+                <span class="featured-card-arrow">→</span>
+            </a>
+            <a href="https://github.com/ganeshkrishnareddy/GramFlow" target="_blank" class="featured-card fade-in">
+                <div class="featured-card-header">
+                    <div class="featured-card-icon fci-3">📊</div>
+                    <div>
+                        <h3>GramFlow</h3>
+                        <span class="fc-tag">Live App</span>
+                    </div>
+                </div>
+                <p>Full-stack workflow management application deployed on Vercel for efficient data flow and process optimization.</p>
+                <div class="featured-card-tech">
+                    <span>JavaScript</span><span>React</span><span>Vercel</span>
+                </div>
+                <span class="featured-card-arrow">→</span>
+            </a>
+            <a href="https://github.com/ganeshkrishnareddy/PixoPDF" target="_blank" class="featured-card fade-in">
+                <div class="featured-card-header">
+                    <div class="featured-card-icon fci-4">📄</div>
+                    <div>
+                        <h3>PixoPDF</h3>
+                        <span class="fc-tag">Tool</span>
+                    </div>
+                </div>
+                <p>PDF processing and manipulation tool built for developers who need programmatic document handling.</p>
+                <div class="featured-card-tech">
+                    <span>JavaScript</span><span>PDF Processing</span><span>CLI</span>
+                </div>
+                <span class="featured-card-arrow">→</span>
+            </a>
         </div>
     </div>
 </section>
@@ -802,7 +1012,8 @@ document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
 document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', (e) => {
         e.preventDefault();
-        document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
     });
 });
 
@@ -812,6 +1023,68 @@ window.addEventListener('scroll', () => {
     if (window.scrollY > 50) nav.style.background = 'rgba(3,7,18,0.95)';
     else nav.style.background = 'rgba(3,7,18,0.8)';
 });
+
+// Hero particles
+(function() {
+    const container = document.getElementById('particles');
+    if (!container) return;
+    for (let i = 0; i < 40; i++) {
+        const p = document.createElement('div');
+        p.className = 'hero-particle';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.width = p.style.height = (Math.random() * 3 + 1) + 'px';
+        p.style.animationDuration = (Math.random() * 12 + 8) + 's';
+        p.style.animationDelay = (Math.random() * 15) + 's';
+        p.style.opacity = Math.random() * 0.4 + 0.1;
+        const colors = ['var(--primary)', 'var(--accent)', 'var(--pink)', 'var(--green)'];
+        p.style.background = colors[Math.floor(Math.random() * colors.length)];
+        container.appendChild(p);
+    }
+})();
+
+// Mouse follow glow
+(function() {
+    const glow = document.getElementById('mouseGlow');
+    if (!glow) return;
+    document.addEventListener('mousemove', (e) => {
+        glow.style.transform = 'translate(' + (e.clientX - 250) + 'px,' + (e.clientY - 250) + 'px)';
+    });
+})();
+
+// Typewriter effect
+(function() {
+    const el = document.getElementById('typewriter');
+    if (!el) return;
+    const titles = [
+        'Secure Software Engineer',
+        'AI Security Engineer',
+        'Offensive Security Specialist',
+        'Multi-Agent AI Architect',
+        'Full-Stack Developer',
+        'Bug Bounty Hunter',
+        'Open Source Contributor',
+        'Linux Systems Expert'
+    ];
+    let ti = 0, ci = 0, deleting = false, pause = 0;
+    function tick() {
+        const cur = titles[ti];
+        if (!deleting) {
+            el.textContent = cur.substring(0, ci + 1);
+            ci++;
+            if (ci === cur.length) { deleting = true; pause = 2000; }
+        } else if (pause > 0) {
+            pause -= 100;
+            setTimeout(tick, 100);
+            return;
+        } else {
+            el.textContent = cur.substring(0, ci - 1);
+            ci--;
+            if (ci === 0) { deleting = false; ti = (ti + 1) % titles.length; }
+        }
+        setTimeout(tick, deleting ? 40 : 80);
+    }
+    tick();
+})();
 </script>
 </body>
 </html>
