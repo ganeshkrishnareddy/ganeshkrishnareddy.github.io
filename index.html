@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P Ganesh Krishna Reddy — Secure Software Engineer & AI Builder</title>
+    <meta name="description" content="Portfolio of P Ganesh Krishna Reddy — Secure Software Engineer specializing in Cybersecurity, AI-powered tools, and Full-Stack development. Building autonomous security systems at ProgVision.">
+    <meta name="keywords" content="P Ganesh Krishna Reddy, cybersecurity engineer, full-stack developer, AI security, penetration testing, ethical hacking, ProgVision, secure software engineer">
+    <meta property="og:title" content="P Ganesh Krishna Reddy — Secure Software Engineer & AI Builder">
+    <meta property="og:description" content="Building autonomous AI security systems and scalable applications with security-first design.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ganeshkrishnareddy.github.io">
+    <link rel="icon" href="https://avatars.githubusercontent.com/ganeshkrishnareddy?v=4&s=64">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6366F1;
+            --accent: #06B6D4;
+            --green: #10B981;
+            --orange: #F59E0B;
+            --pink: #EC4899;
+            --red: #EF4444;
+            --bg: #030712;
+            --bg2: #0A0F1C;
+            --bg3: #111827;
+            --card: rgba(255,255,255,0.02);
+            --text: #F9FAFB;
+            --muted: #9CA3AF;
+            --border: rgba(255,255,255,0.06);
+        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+
+        .noise{position:fixed;inset:0;pointer-events:none;opacity:.03;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");z-index:9999}
+
+        /* NAV */
+        nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(20px);background:rgba(3,7,18,0.8);border-bottom:1px solid var(--border)}
+        .nav-logo{font-weight:800;font-size:1.1rem;letter-spacing:-0.5px}
+        .nav-logo span{color:var(--primary)}
+        .nav-links{display:flex;gap:32px}
+        .nav-links a{color:var(--muted);text-decoration:none;font-size:0.85rem;font-weight:500;transition:color .3s}
+        .nav-links a:hover{color:var(--text)}
+        .nav-cta{padding:8px 20px;background:var(--primary);color:white;border-radius:8px;font-size:0.85rem;font-weight:600;text-decoration:none;transition:all .3s}
+        .nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(99,102,241,0.4)}
+
+        /* HERO */
+        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;padding:120px 40px 80px;overflow:hidden}
+        .hero-bg{position:absolute;inset:0}
+        .hero-orb{position:absolute;border-radius:50%;filter:blur(120px);animation:orb-float 12s ease-in-out infinite}
+        .orb-1{width:600px;height:600px;top:-200px;right:-100px;background:rgba(99,102,241,0.15);animation-delay:0s}
+        .orb-2{width:500px;height:500px;bottom:-250px;left:-150px;background:rgba(6,182,212,0.12);animation-delay:-4s}
+        .orb-3{width:400px;height:400px;top:40%;left:50%;background:rgba(236,72,153,0.08);animation-delay:-8s}
+        @keyframes orb-float{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,30px) scale(0.95)}}
+
+        .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse at center,black 20%,transparent 70%)}
+
+        .hero-content{position:relative;z-index:10;text-align:center;max-width:900px}
+        .hero-status{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.2);border-radius:100px;font-size:0.8rem;color:var(--green);font-weight:600;margin-bottom:32px}
+        .status-dot{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
+        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+        .hero-avatar{width:140px;height:140px;border-radius:32px;margin:0 auto 40px;box-shadow:0 0 80px rgba(99,102,241,0.25);border:2px solid rgba(99,102,241,0.3);animation:avatar-float 8s ease-in-out infinite}
+        @keyframes avatar-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+        .hero h1{font-size:clamp(3rem,7vw,5.5rem);font-weight:900;letter-spacing:-3px;line-height:1.05;margin-bottom:24px}
+        .hero h1 .gradient{background:linear-gradient(135deg,var(--primary),var(--accent),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .hero h1 .highlight{color:var(--accent);-webkit-text-fill-color:var(--accent)}
+
+        .hero-sub{font-size:1.2rem;color:var(--muted);max-width:650px;margin:0 auto 40px;line-height:1.7}
+        .hero-sub strong{color:var(--text);font-weight:600}
+
+        .hero-tags{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:48px}
+        .hero-tag{padding:6px 14px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:8px;font-size:0.8rem;color:var(--muted);font-weight:500}
+
+        .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
+        .btn{padding:14px 28px;border-radius:12px;font-size:0.9rem;font-weight:600;text-decoration:none;transition:all .3s;display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer}
+        .btn-fill{background:linear-gradient(135deg,var(--primary),#4F46E5);color:white;box-shadow:0 4px 20px rgba(99,102,241,0.35)}
+        .btn-fill:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(99,102,241,0.5)}
+        .btn-outline{background:transparent;color:var(--text);border:1px solid var(--border)}
+        .btn-outline:hover{background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.15);transform:translateY(-2px)}
+
+        /* SECTIONS */
+        section{padding:120px 40px}
+        .container{max-width:1100px;margin:0 auto}
+        .section-label{display:inline-block;padding:6px 14px;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.15);border-radius:100px;font-size:0.75rem;font-weight:600;color:var(--primary);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:20px}
+        .section-title{font-size:clamp(2rem,4vw,3rem);font-weight:800;letter-spacing:-1.5px;margin-bottom:12px}
+        .section-desc{font-size:1.05rem;color:var(--muted);max-width:550px;line-height:1.7}
+        .section-header{text-align:center;margin-bottom:64px}
+        .section-header .section-desc{margin:0 auto}
+
+        /* STATS */
+        .stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:0}
+        .stat-item{text-align:center;padding:32px 16px;background:var(--card);border:1px solid var(--border);border-radius:16px;transition:all .3s}
+        .stat-item:hover{border-color:rgba(99,102,241,0.3);transform:translateY(-4px)}
+        .stat-num{font-size:2.5rem;font-weight:900;line-height:1;margin-bottom:4px}
+        .stat-num.c1{color:var(--primary)}.stat-num.c2{color:var(--accent)}.stat-num.c3{color:var(--green)}.stat-num.c4{color:var(--pink)}
+        .stat-label{font-size:0.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:500}
+
+        /* ABOUT */
+        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+        .about-text p{color:var(--muted);margin-bottom:20px;font-size:1rem;line-height:1.8}
+        .about-text p strong{color:var(--text)}
+        .about-skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+        .skill-tag{padding:8px 16px;background:rgba(99,102,241,0.06);border:1px solid rgba(99,102,241,0.12);border-radius:8px;font-size:0.8rem;font-weight:600;color:var(--primary)}
+        .about-visual{position:relative}
+        .about-card{padding:40px;background:linear-gradient(135deg,rgba(99,102,241,0.06),rgba(6,182,212,0.04));border:1px solid var(--border);border-radius:20px;position:relative;overflow:hidden}
+        .about-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent),var(--pink))}
+        .about-card h3{font-size:1.3rem;font-weight:700;margin-bottom:20px}
+        .about-list{list-style:none}
+        .about-list li{padding:12px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px;color:var(--muted);font-size:0.9rem}
+        .about-list li:last-child{border-bottom:none}
+        .about-list .icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;flex-shrink:0}
+        .icon-sec{background:rgba(239,68,68,0.1)}.icon-ai{background:rgba(99,102,241,0.1)}.icon-fs{background:rgba(16,185,129,0.1)}.icon-linux{background:rgba(245,158,11,0.1)}
+
+        /* PROJECTS */
+        .projects-grid{display:grid;gap:24px}
+        .project-card{display:grid;grid-template-columns:auto 1fr auto;gap:32px;padding:40px;background:var(--card);border:1px solid var(--border);border-radius:20px;transition:all .4s;position:relative;overflow:hidden}
+        .project-card::before{content:'';position:absolute;inset:0;border-radius:20px;padding:1px;background:linear-gradient(135deg,transparent,rgba(99,102,241,0.2),transparent);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude;opacity:0;transition:opacity .4s}
+        .project-card:hover{transform:translateY(-4px);box-shadow:0 24px 80px rgba(0,0,0,0.3)}
+        .project-card:hover::before{opacity:1}
+        .project-card > *{position:relative;z-index:2}
+
+        .project-icon{width:72px;height:72px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:2rem;flex-shrink:0}
+        .pi-1{background:linear-gradient(135deg,rgba(239,68,68,0.15),rgba(239,68,68,0.05))}
+        .pi-2{background:linear-gradient(135deg,rgba(99,102,241,0.15),rgba(99,102,241,0.05))}
+        .pi-3{background:linear-gradient(135deg,rgba(16,185,129,0.15),rgba(16,185,129,0.05))}
+        .pi-4{background:linear-gradient(135deg,rgba(245,158,11,0.15),rgba(245,158,11,0.05))}
+        .pi-5{background:linear-gradient(135deg,rgba(6,182,212,0.15),rgba(6,182,212,0.05))}
+        .pi-6{background:linear-gradient(135deg,rgba(236,72,153,0.15),rgba(236,72,153,0.05))}
+
+        .project-info h3{font-size:1.3rem;font-weight:700;margin-bottom:4px}
+        .project-info .proj-tag{display:inline-block;padding:3px 10px;background:rgba(99,102,241,0.1);border-radius:6px;font-size:0.7rem;font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+        .project-info p{color:var(--muted);font-size:0.9rem;line-height:1.7;margin-bottom:16px}
+        .project-tech{display:flex;flex-wrap:wrap;gap:6px}
+        .project-tech span{padding:4px 10px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:6px;font-size:0.75rem;color:var(--muted);font-weight:500}
+
+        .project-actions{display:flex;flex-direction:column;gap:10px;justify-content:center}
+        .proj-btn{padding:10px 20px;border-radius:10px;font-size:0.8rem;font-weight:600;text-decoration:none;text-align:center;transition:all .3s;border:1px solid var(--border);color:var(--text);background:rgba(255,255,255,0.03)}
+        .proj-btn:hover{background:rgba(99,102,241,0.1);border-color:var(--primary);color:var(--primary)}
+        .proj-btn.primary{background:var(--primary);border-color:var(--primary);color:white}
+        .proj-btn.primary:hover{box-shadow:0 4px 20px rgba(99,102,241,0.4)}
+
+        /* SKILLS */
+        .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+        .skill-card{padding:32px;background:var(--card);border:1px solid var(--border);border-radius:16px;transition:all .3s}
+        .skill-card:hover{border-color:rgba(99,102,241,0.3);transform:translateY(-3px)}
+        .skill-card h4{font-size:0.8rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:16px;font-weight:600}
+        .skill-items{display:flex;flex-wrap:wrap;gap:6px}
+        .skill-chip{padding:6px 12px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:8px;font-size:0.8rem;font-weight:500;color:var(--text);transition:all .3s}
+        .skill-chip:hover{border-color:var(--accent);color:var(--accent)}
+
+        /* EXPERIENCE */
+        .exp-timeline{max-width:700px;margin:0 auto;position:relative}
+        .exp-timeline::before{content:'';position:absolute;left:24px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--primary),var(--accent))}
+        .exp-item{display:flex;gap:32px;padding:24px 0;position:relative}
+        .exp-dot{width:14px;height:14px;border-radius:50%;margin-top:6px;flex-shrink:0;margin-left:18px;position:relative;z-index:2;background:var(--primary);box-shadow:0 0 20px rgba(99,102,241,0.4)}
+        .exp-content{flex:1}
+        .exp-date{font-size:0.75rem;color:var(--primary);text-transform:uppercase;letter-spacing:1.5px;font-weight:700;margin-bottom:6px}
+        .exp-title{font-size:1.15rem;font-weight:700;margin-bottom:4px}
+        .exp-sub{color:var(--accent);font-size:0.9rem;font-weight:600;margin-bottom:8px}
+        .exp-desc{color:var(--muted);font-size:0.9rem;line-height:1.7}
+
+        /* CONNECT */
+        .connect-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;max-width:800px;margin:0 auto}
+        .connect-card{padding:28px;background:var(--card);border:1px solid var(--border);border-radius:16px;text-align:center;text-decoration:none;color:var(--text);transition:all .3s}
+        .connect-card:hover{border-color:var(--primary);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.3)}
+        .connect-icon{font-size:2rem;margin-bottom:12px}
+        .connect-card h4{font-size:1rem;font-weight:700;margin-bottom:4px}
+        .connect-card p{font-size:0.8rem;color:var(--muted)}
+
+        /* FOOTER */
+        footer{padding:40px;text-align:center;border-top:1px solid var(--border);color:var(--muted);font-size:0.8rem}
+        footer a{color:var(--primary);text-decoration:none}
+
+        /* RESPONSIVE */
+        @media(max-width:900px){
+            nav{padding:16px 20px}
+            .nav-links{display:none}
+            section{padding:80px 20px}
+            .hero{padding:100px 20px 60px}
+            .stats-bar{grid-template-columns:repeat(2,1fr)}
+            .about-grid{grid-template-columns:1fr;gap:40px}
+            .project-card{grid-template-columns:1fr;gap:20px}
+            .project-actions{flex-direction:row}
+        }
+        @media(max-width:600px){
+            .hero h1{letter-spacing:-1px}
+            .hero-cta{flex-direction:column;align-items:center}
+            .btn{width:100%;max-width:280px;justify-content:center}
+            .stats-bar{grid-template-columns:1fr 1fr}
+            .skills-grid{grid-template-columns:1fr}
+        }
+
+        .fade-in{opacity:0;transform:translateY(30px);transition:all .7s cubic-bezier(.16,1,.3,1)}
+        .fade-in.visible{opacity:1;transform:translateY(0)}
+    </style>
+</head>
+<body>
+<div class="noise"></div>
+
+<!-- NAV -->
+<nav>
+    <div class="nav-logo">P<span>GKR</span></div>
+    <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Journey</a>
+        <a href="#connect">Connect</a>
+    </div>
+    <a href="https://github.com/ganeshkrishnareddy" target="_blank" class="nav-cta">GitHub</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg">
+        <div class="hero-orb orb-1"></div>
+        <div class="hero-orb orb-2"></div>
+        <div class="hero-orb orb-3"></div>
+        <div class="hero-grid"></div>
+    </div>
+    <div class="hero-content">
+        <div class="hero-status"><span class="status-dot"></span>Open to Opportunities</div>
+        <img src="https://avatars.githubusercontent.com/ganeshkrishnareddy?v=4&s=280" alt="P Ganesh Krishna Reddy" class="hero-avatar">
+        <h1>P Ganesh Krishna<br><span class="gradient">Reddy</span></h1>
+        <p class="hero-sub"><strong>Secure Software Engineer</strong> building <strong>autonomous AI security systems</strong> and scalable applications with security-first design. Specializing in offensive security, multi-agent architectures, and full-stack development.</p>
+        <div class="hero-tags">
+            <span class="hero-tag">Cybersecurity</span>
+            <span class="hero-tag">AI / ML</span>
+            <span class="hero-tag">Full-Stack</span>
+            <span class="hero-tag">Linux Hardening</span>
+            <span class="hero-tag">Offensive Security</span>
+            <span class="hero-tag">TypeScript</span>
+        </div>
+        <div class="hero-cta">
+            <a href="#projects" class="btn btn-fill">View My Work</a>
+            <a href="https://linkedin.com/in/pganeshkrishnareddy" target="_blank" class="btn btn-outline">LinkedIn</a>
+            <a href="https://pganeshkrishnareddy.vercel.app" target="_blank" class="btn btn-outline">Portfolio</a>
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<section style="padding-top:0;padding-bottom:60px">
+    <div class="container">
+        <div class="stats-bar fade-in">
+            <div class="stat-item">
+                <div class="stat-num c1">49+</div>
+                <div class="stat-label">Repositories</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num c2">8+</div>
+                <div class="stat-label">Languages</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num c3">5+</div>
+                <div class="stat-label">Live Projects</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-num c4">5+</div>
+                <div class="stat-label">Years Coding</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="background:var(--bg2)">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-text fade-in">
+                <span class="section-label">About Me</span>
+                <h2 class="section-title" style="text-align:left">Building the future of<br>secure software</h2>
+                <p>I'm a <strong>Secure Software Engineer</strong> at <strong>ProgVision</strong> based in India, specializing in the intersection of <strong>cybersecurity</strong> and <strong>artificial intelligence</strong>. I build autonomous security testing systems, scalable web applications, and AI-powered tools.</p>
+                <p>My work spans from <strong>offensive security</strong> (penetration testing, vulnerability research) to <strong>full-stack development</strong> with a security-first mindset. I believe the best software is built by engineers who understand how to break it.</p>
+                <p>Currently building <strong>PentestCode</strong> — a multi-agent AI penetration testing platform that autonomously discovers, exploits, and reports security vulnerabilities using 13 specialized AI agents.</p>
+                <div class="about-skills">
+                    <span class="skill-tag">Penetration Testing</span>
+                    <span class="skill-tag">AI Agents</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">React / Next.js</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Security Architecture</span>
+                </div>
+            </div>
+            <div class="about-visual fade-in">
+                <div class="about-card">
+                    <h3>What I Do</h3>
+                    <ul class="about-list">
+                        <li><span class="icon icon-sec">🛡️</span>Build autonomous security testing platforms</li>
+                        <li><span class="icon icon-ai">🤖</span>Design multi-agent AI architectures</li>
+                        <li><span class="icon icon-fs">⚡</span>Develop full-stack web applications</li>
+                        <li><span class="icon icon-linux">🐧</span>Harden Linux systems & automate security</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-label">Featured Projects</span>
+            <h2 class="section-title">Things I've built</h2>
+            <p class="section-desc">A selection of projects that showcase my skills in security, AI, and full-stack development.</p>
+        </div>
+
+        <div class="projects-grid">
+            <!-- PentestCode -->
+            <div class="project-card fade-in">
+                <div class="project-icon pi-1">🔐</div>
+                <div class="project-info">
+                    <span class="proj-tag">Flagship</span>
+                    <h3>PentestCode</h3>
+                    <p>Multi-agent AI penetration testing system with persistent engagement state, strategic coordination, and parallel autonomous operations. Features 13 specialized AI agents, 18+ pentest tools, 20+ LLM providers, and 19 knowledge packs.</p>
+                    <div class="project-tech">
+                        <span>TypeScript</span><span>AI/LLM</span><span>Multi-Agent</span><span>Bun Runtime</span><span>Cross-Platform</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/ganeshkrishnareddy/pentestcode" target="_blank" class="proj-btn primary">GitHub</a>
+                    <a href="https://ganeshkrishnareddy.github.io/pentestcode/" target="_blank" class="proj-btn">Website</a>
+                </div>
+            </div>
+
+            <!-- FlowMatch -->
+            <div class="project-card fade-in">
+                <div class="project-icon pi-2">🔄</div>
+                <div class="project-info">
+                    <span class="proj-tag">Open Source</span>
+                    <h3>FlowMatch</h3>
+                    <p>Intelligent workflow automation platform built with TypeScript. Streamlines complex processes with smart matching algorithms and adaptive flow control.</p>
+                    <div class="project-tech">
+                        <span>TypeScript</span><span>MIT License</span><span>Automation</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/ganeshkrishnareddy/FlowMatch" target="_blank" class="proj-btn primary">GitHub</a>
+                </div>
+            </div>
+
+            <!-- GramFlow -->
+            <div class="project-card fade-in">
+                <div class="project-icon pi-3">📊</div>
+                <div class="project-info">
+                    <span class="proj-tag">Live App</span>
+                    <h3>GramFlow</h3>
+                    <p>Full-stack workflow management application deployed on Vercel. Designed for efficient data flow management and process optimization.</p>
+                    <div class="project-tech">
+                        <span>JavaScript</span><span>React</span><span>Vercel</span><span>Live</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/ganeshkrishnareddy/GramFlow" target="_blank" class="proj-btn primary">GitHub</a>
+                    <a href="https://gram-flow.vercel.app" target="_blank" class="proj-btn">Live Demo</a>
+                </div>
+            </div>
+
+            <!-- PixoPDF -->
+            <div class="project-card fade-in">
+                <div class="project-icon pi-4">📄</div>
+                <div class="project-info">
+                    <span class="proj-tag">Tool</span>
+                    <h3>PixoPDF</h3>
+                    <p>Pixel-perfect PDF generation and manipulation tool. Create, edit, and transform PDF documents with precision control.</p>
+                    <div class="project-tech">
+                        <span>HTML</span><span>PDF</span><span>Document Processing</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/ganeshkrishnareddy/PixoPDF" target="_blank" class="proj-btn primary">GitHub</a>
+                </div>
+            </div>
+
+            <!-- ProgVision CRM -->
+            <div class="project-card fade-in">
+                <div class="project-icon pi-5">💼</div>
+                <div class="project-info">
+                    <span class="proj-tag">SaaS</span>
+                    <h3>ProgVision CRM</h3>
+                    <p>Full-featured customer relationship management platform for ProgVision. Manages leads, clients, projects, and business operations in one dashboard.</p>
+                    <div class="project-tech">
+                        <span>JavaScript</span><span>React</span><span>Node.js</span><span>Vercel</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/ganeshkrishnareddy/progvisioncrm" target="_blank" class="proj-btn primary">GitHub</a>
+                    <a href="https://progvisioncrm.vercel.app" target="_blank" class="proj-btn">Live Demo</a>
+                </div>
+            </div>
+
+            <!-- SpyHunt -->
+            <div class="project-card fade-in">
+                <div class="project-icon pi-6">🕵️</div>
+                <div class="project-info">
+                    <span class="proj-tag">Security</span>
+                    <h3>SpyHunt</h3>
+                    <p>OSINT and reconnaissance tool for security researchers. Gather intelligence, track digital footprints, and map attack surfaces.</p>
+                    <div class="project-tech">
+                        <span>JavaScript</span><span>OSINT</span><span>Recon</span>
+                    </div>
+                </div>
+                <div class="project-actions">
+                    <a href="https://github.com/ganeshkrishnareddy/SpyHunt" target="_blank" class="proj-btn primary">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="background:var(--bg2)">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-label">Technical Skills</span>
+            <h2 class="section-title">Tech stack & expertise</h2>
+        </div>
+        <div class="skills-grid fade-in">
+            <div class="skill-card">
+                <h4>Security</h4>
+                <div class="skill-items">
+                    <span class="skill-chip">Penetration Testing</span>
+                    <span class="skill-chip">Vulnerability Research</span>
+                    <span class="skill-chip">OSINT</span>
+                    <span class="skill-chip">Active Directory</span>
+                    <span class="skill-chip">Web App Security</span>
+                    <span class="skill-chip">Network Security</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h4>AI / Machine Learning</h4>
+                <div class="skill-items">
+                    <span class="skill-chip">Multi-Agent Systems</span>
+                    <span class="skill-chip">LLM Integration</span>
+                    <span class="skill-chip">Prompt Engineering</span>
+                    <span class="skill-chip">Claude / GPT-4</span>
+                    <span class="skill-chip">AI Orchestration</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h4>Frontend</h4>
+                <div class="skill-items">
+                    <span class="skill-chip">React</span>
+                    <span class="skill-chip">Next.js</span>
+                    <span class="skill-chip">TypeScript</span>
+                    <span class="skill-chip">Tailwind CSS</span>
+                    <span class="skill-chip">HTML/CSS</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h4>Backend</h4>
+                <div class="skill-items">
+                    <span class="skill-chip">Node.js</span>
+                    <span class="skill-chip">Express</span>
+                    <span class="skill-chip">REST APIs</span>
+                    <span class="skill-chip">Bun Runtime</span>
+                    <span class="skill-chip">Database Design</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h4>DevOps / Infra</h4>
+                <div class="skill-items">
+                    <span class="skill-chip">Docker</span>
+                    <span class="skill-chip">Linux</span>
+                    <span class="skill-chip">Git</span>
+                    <span class="skill-chip">CI/CD</span>
+                    <span class="skill-chip">Vercel</span>
+                    <span class="skill-chip">Shell Scripting</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <h4>Tools & Methods</h4>
+                <div class="skill-items">
+                    <span class="skill-chip">Nmap</span>
+                    <span class="skill-chip">Nuclei</span>
+                    <span class="skill-chip">SQLMap</span>
+                    <span class="skill-chip">BloodHound</span>
+                    <span class="skill-chip">Burp Suite</span>
+                    <span class="skill-chip">Metasploit</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-label">Journey</span>
+            <h2 class="section-title">Experience & milestones</h2>
+        </div>
+        <div class="exp-timeline fade-in">
+            <div class="exp-item">
+                <div class="exp-dot"></div>
+                <div class="exp-content">
+                    <div class="exp-date">2026 — Present</div>
+                    <div class="exp-title">Founder & Lead Engineer</div>
+                    <div class="exp-sub">ProgVision</div>
+                    <div class="exp-desc">Building ProgVision's product suite including CRM platform, AI tools, and security products. Leading full-stack development and security architecture.</div>
+                </div>
+            </div>
+            <div class="exp-item">
+                <div class="exp-dot"></div>
+                <div class="exp-content">
+                    <div class="exp-date">2026</div>
+                    <div class="exp-title">PentestCode — AI Security Platform</div>
+                    <div class="exp-sub">Open Source</div>
+                    <div class="exp-desc">Created a multi-agent AI penetration testing system with 13 specialized agents, persistent memory, and 20+ LLM provider support. Built with TypeScript and Bun runtime.</div>
+                </div>
+            </div>
+            <div class="exp-item">
+                <div class="exp-dot"></div>
+                <div class="exp-content">
+                    <div class="exp-date">2025 — 2026</div>
+                    <div class="exp-title">Full-Stack & Security Engineer</div>
+                    <div class="exp-sub">Multiple Projects</div>
+                    <div class="exp-desc">Built and deployed 5+ production applications. Specialized in security-first development, Linux system hardening, and automated security testing pipelines.</div>
+                </div>
+            </div>
+            <div class="exp-item">
+                <div class="exp-dot"></div>
+                <div class="exp-content">
+                    <div class="exp-date">2021 — Present</div>
+                    <div class="exp-title">Open Source Contributor</div>
+                    <div class="exp-sub">49+ Public Repositories</div>
+                    <div class="exp-desc">Active contributor to open source with projects spanning cybersecurity tools, AI applications, full-stack web apps, and developer utilities.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONNECT -->
+<section id="connect" style="background:var(--bg2)">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-label">Let's Connect</span>
+            <h2 class="section-title">Get in touch</h2>
+            <p class="section-desc">I'm always open to discussing new opportunities, security research, and collaboration.</p>
+        </div>
+        <div class="connect-grid fade-in">
+            <a href="https://github.com/ganeshkrishnareddy" target="_blank" class="connect-card">
+                <div class="connect-icon">💻</div>
+                <h4>GitHub</h4>
+                <p>49+ repos</p>
+            </a>
+            <a href="https://linkedin.com/in/pganeshkrishnareddy" target="_blank" class="connect-card">
+                <div class="connect-icon">💼</div>
+                <h4>LinkedIn</h4>
+                <p>Connect</p>
+            </a>
+            <a href="https://pganeshkrishnareddy.vercel.app" target="_blank" class="connect-card">
+                <div class="connect-icon">🌐</div>
+                <h4>Website</h4>
+                <p>pganeshkrishnareddy.vercel.app</p>
+            </a>
+            <a href="mailto:pganeshkrishnareddy@gmail.com" class="connect-card">
+                <div class="connect-icon">📧</div>
+                <h4>Email</h4>
+                <p>pganeshkrishnareddy@gmail.com</p>
+            </a>
+            <a href="https://razorpay.me/@ProgVision" target="_blank" class="connect-card">
+                <div class="connect-icon">☕</div>
+                <h4>Support</h4>
+                <p>Buy me a coffee</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 P Ganesh Krishna Reddy. Built with passion & security-first mindset.</p>
+</footer>
+
+<script>
+// Fade-in observer
+const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.querySelector(a.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+// Nav background on scroll
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 50) nav.style.background = 'rgba(3,7,18,0.95)';
+    else nav.style.background = 'rgba(3,7,18,0.8)';
+});
+</script>
+</body>
+</html>
