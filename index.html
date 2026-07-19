@@ -169,6 +169,64 @@
         .connect-card h4{font-size:1rem;font-weight:700;margin-bottom:4px}
         .connect-card p{font-size:0.8rem;color:var(--muted)}
 
+        /* CREDENTIALS */
+        .creds-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;max-width:900px;margin:0 auto}
+        .cred-card{padding:24px 16px;background:var(--card);border:1px solid var(--border);border-radius:14px;text-align:center;transition:all .3s}
+        .cred-card:hover{border-color:rgba(99,102,241,0.3);transform:translateY(-3px)}
+        .cred-icon{font-size:1.8rem;margin-bottom:8px}
+        .cred-num{font-size:1.5rem;font-weight:800;margin-bottom:2px}
+        .cred-num.cn1{color:var(--primary)}.cred-num.cn2{color:var(--accent)}.cred-num.cn3{color:var(--green)}.cred-num.cn4{color:var(--orange)}.cred-num.cn5{color:var(--pink)}.cred-num.cn6{color:var(--red)}
+        .cred-label{font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;font-weight:500}
+
+        /* CONNECT FULL */
+        .connect-all{display:flex;flex-direction:column;gap:32px;max-width:900px;margin:0 auto}
+        .connect-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+        .connect-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--card);border:1px solid var(--border);border-radius:12px;text-decoration:none;color:var(--text);font-size:0.85rem;font-weight:600;transition:all .3s;position:relative}
+        .connect-pill:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 8px 30px rgba(0,0,0,0.3)}
+        .connect-pill .pill-icon{font-size:1.1rem}
+        .connect-pill .pill-name{font-weight:600}
+        .connect-pill .pill-badge{font-size:0.65rem;padding:2px 6px;background:rgba(255,255,255,0.06);border-radius:4px;color:var(--muted);margin-left:4px}
+
+        /* Brand colors on hover */
+        .connect-pill[data-color="github"]:hover{border-color:#8b5cf6;color:#8b5cf6;box-shadow:0 8px 30px rgba(139,92,246,0.2)}
+        .connect-pill[data-color="linkedin"]:hover{border-color:#0A66C2;color:#0A66C2;box-shadow:0 8px 30px rgba(10,102,194,0.2)}
+        .connect-pill[data-color="x"]:hover{border-color:#fff;color:#fff;box-shadow:0 8px 30px rgba(255,255,255,0.15)}
+        .connect-pill[data-color="devto"]:hover{border-color:#0A0A0A;color:#fff;background:#0A0A0A;box-shadow:0 8px 30px rgba(0,0,0,0.3)}
+        .connect-pill[data-color="hashnode"]:hover{border-color:#2962FF;color:#2962FF;box-shadow:0 8px 30px rgba(41,98,255,0.2)}
+        .connect-pill[data-color="medium"]:hover{border-color:#fff;color:#fff;box-shadow:0 8px 30px rgba(255,255,255,0.1)}
+        .connect-pill[data-color="producthunt"]:hover{border-color:#DA552F;color:#DA552F;box-shadow:0 8px 30px rgba(218,85,47,0.2)}
+        .connect-pill[data-color="hackernews"]:hover{border-color:#FF6600;color:#FF6600;box-shadow:0 8px 30px rgba(255,102,0,0.2)}
+        .connect-pill[data-color="reddit"]:hover{border-color:#FF4500;color:#FF4500;box-shadow:0 8px 30px rgba(255,69,0,0.2)}
+        .connect-pill[data-color="quora"]:hover{border-color:#A82400;color:#A82400;box-shadow:0 8px 30px rgba(168,36,0,0.2)}
+        .connect-pill[data-color="youtube"]:hover{border-color:#FF0000;color:#FF0000;box-shadow:0 8px 30px rgba(255,0,0,0.2)}
+        .connect-pill[data-color="instagram"]:hover{border-color:#E4405F;color:#E4405F;box-shadow:0 8px 30px rgba(228,64,95,0.2)}
+        .connect-pill[data-color="huggingface"]:hover{border-color:#FFD21E;color:#FFD21E;box-shadow:0 8px 30px rgba(255,210,30,0.2)}
+        .connect-pill[data-color="docker"]:hover{border-color:#2496ED;color:#2496ED;box-shadow:0 8px 30px rgba(36,150,237,0.2)}
+        .connect-pill[data-color="npm"]:hover{border-color:#CB3837;color:#CB3837;box-shadow:0 8px 30px rgba(203,56,55,0.2)}
+        .connect-pill[data-color="tryhackme"]:hover{border-color:#212C42;color:#88cc14;box-shadow:0 8px 30px rgba(136,204,20,0.2)}
+        .connect-pill[data-color="hackthebox"]:hover{border-color:#9FEF00;color:#9FEF00;box-shadow:0 8px 30px rgba(159,239,0,0.2)}
+        .connect-pill[data-color="hackerone"]:hover{border-color:#5C5C5C;color:#fff;box-shadow:0 8px 30px rgba(92,92,92,0.2)}
+        .connect-pill[data-color="hackerearth"]:hover{border-color:#323761;color:#323761;box-shadow:0 8px 30px rgba(50,55,97,0.2)}
+        .connect-pill[data-color="yeswehack"]:hover{border-color:#00D2FF;color:#00D2FF;box-shadow:0 8px 30px rgba(0,210,255,0.2)}
+        .connect-pill[data-color="cyber"]:hover{border-color:#FF6B35;color:#FF6B35;box-shadow:0 8px 30px rgba(255,107,53,0.2)}
+        .connect-pill[data-color="leetcode"]:hover{border-color:#F89F1B;color:#F89F1B;box-shadow:0 8px 30px rgba(248,159,27,0.2)}
+        .connect-pill[data-color="hackerrank"]:hover{border-color:#1BA94C;color:#1BA94C;box-shadow:0 8px 30px rgba(27,169,76,0.2)}
+        .connect-pill[data-color="email"]:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 8px 30px rgba(6,182,212,0.2)}
+        .connect-pill[data-color="website"]:hover{border-color:var(--primary);color:var(--primary);box-shadow:0 8px 30px rgba(99,102,241,0.2)}
+        .connect-pill[data-color="razorpay"]:hover{border-color:#072654;color:#3395FF;box-shadow:0 8px 30px rgba(51,149,255,0.2)}
+        .connect-pill[data-color="comptia"]:hover{border-color:#E80000;color:#E80000;box-shadow:0 8px 30px rgba(232,0,0,0.2)}
+
+        .connect-row-label{width:100%;text-align:center;font-size:0.7rem;text-transform:uppercase;letter-spacing:2px;color:var(--muted);font-weight:600;margin-top:8px}
+
+        /* AVAILABILITY */
+        .avail-card{max-width:700px;margin:0 auto;padding:48px;background:linear-gradient(135deg,rgba(99,102,241,0.06),rgba(6,182,212,0.04));border:1px solid var(--border);border-radius:24px;text-align:center;position:relative;overflow:hidden}
+        .avail-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent),var(--green))}
+        .avail-card > *{position:relative}
+        .avail-card h3{font-size:1.6rem;font-weight:800;margin-bottom:12px}
+        .avail-items{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:32px}
+        .avail-item{display:flex;align-items:center;gap:6px;padding:8px 16px;background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.12);border-radius:8px;font-size:0.85rem;color:var(--green);font-weight:500}
+        .avail-item .check{font-weight:700}
+
         /* FOOTER */
         footer{padding:40px;text-align:center;border-top:1px solid var(--border);color:var(--muted);font-size:0.8rem}
         footer a{color:var(--primary);text-decoration:none}
@@ -206,7 +264,7 @@
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
-        <a href="#experience">Journey</a>
+        <a href="#credentials">Credentials</a>
         <a href="#connect">Connect</a>
     </div>
     <a href="https://github.com/ganeshkrishnareddy" target="_blank" class="nav-cta">GitHub</a>
@@ -536,40 +594,194 @@
     </div>
 </section>
 
-<!-- CONNECT -->
-<section id="connect" style="background:var(--bg2)">
+<!-- CREDENTIALS -->
+<section id="credentials" style="background:var(--bg2)">
     <div class="container">
         <div class="section-header fade-in">
-            <span class="section-label">Let's Connect</span>
-            <h2 class="section-title">Get in touch</h2>
-            <p class="section-desc">I'm always open to discussing new opportunities, security research, and collaboration.</p>
+            <span class="section-label">Credentials & Impact</span>
+            <h2 class="section-title">By the numbers</h2>
         </div>
-        <div class="connect-grid fade-in">
-            <a href="https://github.com/ganeshkrishnareddy" target="_blank" class="connect-card">
-                <div class="connect-icon">💻</div>
-                <h4>GitHub</h4>
-                <p>49+ repos</p>
-            </a>
-            <a href="https://linkedin.com/in/pganeshkrishnareddy" target="_blank" class="connect-card">
-                <div class="connect-icon">💼</div>
-                <h4>LinkedIn</h4>
-                <p>Connect</p>
-            </a>
-            <a href="https://pganeshkrishnareddy.vercel.app" target="_blank" class="connect-card">
-                <div class="connect-icon">🌐</div>
-                <h4>Website</h4>
-                <p>pganeshkrishnareddy.vercel.app</p>
-            </a>
-            <a href="mailto:pganeshkrishnareddy@gmail.com" class="connect-card">
-                <div class="connect-icon">📧</div>
-                <h4>Email</h4>
-                <p>pganeshkrishnareddy@gmail.com</p>
-            </a>
-            <a href="https://razorpay.me/@ProgVision" target="_blank" class="connect-card">
-                <div class="connect-icon">☕</div>
-                <h4>Support</h4>
-                <p>Buy me a coffee</p>
-            </a>
+        <div class="creds-grid fade-in">
+            <div class="cred-card">
+                <div class="cred-icon">🛡️</div>
+                <div class="cred-num cn1">50+</div>
+                <div class="cred-label">Vulnerabilities Found</div>
+            </div>
+            <div class="cred-card">
+                <div class="cred-icon">🖥️</div>
+                <div class="cred-num cn2">10+</div>
+                <div class="cred-label">Production Systems</div>
+            </div>
+            <div class="cred-card">
+                <div class="cred-icon">🐙</div>
+                <div class="cred-num cn3">49+</div>
+                <div class="cred-label">Repos Built</div>
+            </div>
+            <div class="cred-card">
+                <div class="cred-icon">🏆</div>
+                <div class="cred-num cn4">CompTIA</div>
+                <div class="cred-label">CySA+ & PenTest+</div>
+            </div>
+            <div class="cred-card">
+                <div class="cred-icon">🐛</div>
+                <div class="cred-num cn5">3+</div>
+                <div class="cred-label">Bug Bounty Platforms</div>
+            </div>
+            <div class="cred-card">
+                <div class="cred-icon">🤖</div>
+                <div class="cred-num cn6">13</div>
+                <div class="cred-label">AI Agents Built</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONNECT -->
+<section id="connect">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-label">Connect Everywhere</span>
+            <h2 class="section-title">Find me on</h2>
+            <p class="section-desc">Multiple ways to connect based on the platform you prefer.</p>
+        </div>
+
+        <div class="connect-all fade-in">
+            <!-- Professional -->
+            <div class="connect-row">
+                <span class="connect-row-label">Professional</span>
+            </div>
+            <div class="connect-row">
+                <a href="https://github.com/ganeshkrishnareddy" target="_blank" class="connect-pill" data-color="github">
+                    <span class="pill-icon">🐙</span><span class="pill-name">GitHub</span><span class="pill-badge">49+ repos</span>
+                </a>
+                <a href="https://linkedin.com/in/pganeshkrishnareddy" target="_blank" class="connect-pill" data-color="linkedin">
+                    <span class="pill-icon">💼</span><span class="pill-name">LinkedIn</span>
+                </a>
+                <a href="https://pganeshkrishnareddy.vercel.app" target="_blank" class="connect-pill" data-color="website">
+                    <span class="pill-icon">🌐</span><span class="pill-name">Website</span>
+                </a>
+                <a href="mailto:pganeshkrishnareddy@gmail.com" class="connect-pill" data-color="email">
+                    <span class="pill-icon">✉️</span><span class="pill-name">Email</span>
+                </a>
+                <a href="https://razorpay.me/@ProgVision" target="_blank" class="connect-pill" data-color="razorpay">
+                    <span class="pill-icon">☕</span><span class="pill-name">Support</span>
+                </a>
+            </div>
+
+            <!-- Developer Communities -->
+            <div class="connect-row">
+                <span class="connect-row-label">Developer Communities</span>
+            </div>
+            <div class="connect-row">
+                <a href="https://dev.to/pganeshkrishnareddy" target="_blank" class="connect-pill" data-color="devto">
+                    <span class="pill-icon">🦄</span><span class="pill-name">Dev.to</span>
+                </a>
+                <a href="https://hashnode.com/@pganeshkrishnareddy" target="_blank" class="connect-pill" data-color="hashnode">
+                    <span class="pill-icon">⚡</span><span class="pill-name">Hashnode</span>
+                </a>
+                <a href="https://medium.com/@pganeshkrishnareddy" target="_blank" class="connect-pill" data-color="medium">
+                    <span class="pill-icon">📝</span><span class="pill-name">Medium</span>
+                </a>
+                <a href="https://www.producthunt.com/@pganeshkrishnareddy" target="_blank" class="connect-pill" data-color="producthunt">
+                    <span class="pill-icon">🟣</span><span class="pill-name">Product Hunt</span>
+                </a>
+                <a href="https://news.ycombinator.com/user?id=pganeshkrishnareddy" target="_blank" class="connect-pill" data-color="hackernews">
+                    <span class="pill-icon">🧠</span><span class="pill-name">Hacker News</span>
+                </a>
+                <a href="https://reddit.com/u/pganeshkrishnareddy" target="_blank" class="connect-pill" data-color="reddit">
+                    <span class="pill-icon">💬</span><span class="pill-name">Reddit</span>
+                </a>
+                <a href="https://quora.com/profile/pganeshkrishnareddy" target="_blank" class="connect-pill" data-color="quora">
+                    <span class="pill-icon">❓</span><span class="pill-name">Quora</span>
+                </a>
+            </div>
+
+            <!-- Cybersecurity & Bug Bounty -->
+            <div class="connect-row">
+                <span class="connect-row-label">Cybersecurity & Bug Bounty</span>
+            </div>
+            <div class="connect-row">
+                <a href="https://hackerone.com/pganeshkrishnareddy" target="_blank" class="connect-pill" data-color="hackerone">
+                    <span class="pill-icon">🔐</span><span class="pill-name">HackerOne</span>
+                </a>
+                <a href="https://yeswehack.com/hunters/pganeshkrishnareddy" target="_blank" class="connect-pill" data-color="yeswehack">
+                    <span class="pill-icon">🎯</span><span class="pill-name">YesWeHack</span>
+                </a>
+                <a href="https://profile.hackthebox.com/profile/019ec51d-f016-710d-88bb-8a98ebb8cc9b" target="_blank" class="connect-pill" data-color="hackthebox">
+                    <span class="pill-icon">🏴</span><span class="pill-name">Hack The Box</span>
+                </a>
+                <a href="https://tryhackme.com/p/pganeshkrishnareddy" target="_blank" class="connect-pill" data-color="tryhackme">
+                    <span class="pill-icon">🛡️</span><span class="pill-name">TryHackMe</span>
+                </a>
+                <a href="https://cyber.comolho.com/researcher/profile/pganeshkrishnareddy_7104d6dc/" target="_blank" class="connect-pill" data-color="cyber">
+                    <span class="pill-icon">🔬</span><span class="pill-name">Comolho Cyber</span>
+                </a>
+                <a href="https://www.hackerearth.com/@pganeshkrishnareddy/" target="_blank" class="connect-pill" data-color="hackerearth">
+                    <span class="pill-icon">⚔️</span><span class="pill-name">HackerEarth</span>
+                </a>
+            </div>
+
+            <!-- AI & Open Source -->
+            <div class="connect-row">
+                <span class="connect-row-label">AI & Open Source</span>
+            </div>
+            <div class="connect-row">
+                <a href="https://huggingface.co/pganeshkrishnareddy" target="_blank" class="connect-pill" data-color="huggingface">
+                    <span class="pill-icon">🤗</span><span class="pill-name">Hugging Face</span>
+                </a>
+                <a href="https://hub.docker.com/u/pganeshkrishnareddy" target="_blank" class="connect-pill" data-color="docker">
+                    <span class="pill-icon">🐳</span><span class="pill-name">Docker Hub</span>
+                </a>
+                <a href="https://www.npmjs.com/~pganeshkrishnareddy" target="_blank" class="connect-pill" data-color="npm">
+                    <span class="pill-icon">📦</span><span class="pill-name">npm</span>
+                </a>
+            </div>
+
+            <!-- Coding Profiles -->
+            <div class="connect-row">
+                <span class="connect-row-label">Coding Profiles</span>
+            </div>
+            <div class="connect-row">
+                <a href="https://leetcode.com/pganeshkrishnareddy" target="_blank" class="connect-pill" data-color="leetcode">
+                    <span class="pill-icon">💻</span><span class="pill-name">LeetCode</span>
+                </a>
+                <a href="https://hackerrank.com/pganeshkrishnareddy" target="_blank" class="connect-pill" data-color="hackerrank">
+                    <span class="pill-icon">⚔️</span><span class="pill-name">HackerRank</span>
+                </a>
+            </div>
+
+            <!-- Social Media -->
+            <div class="connect-row">
+                <span class="connect-row-label">Social Media</span>
+            </div>
+            <div class="connect-row">
+                <a href="https://x.com/_this_is_ganesh" target="_blank" class="connect-pill" data-color="x">
+                    <span class="pill-icon">✖️</span><span class="pill-name">X (Twitter)</span>
+                </a>
+                <a href="https://youtube.com/@pganeshkrishnareddy" target="_blank" class="connect-pill" data-color="youtube">
+                    <span class="pill-icon">▶️</span><span class="pill-name">YouTube</span>
+                </a>
+                <a href="https://instagram.com/pganeshkrishnareddy" target="_blank" class="connect-pill" data-color="instagram">
+                    <span class="pill-icon">📷</span><span class="pill-name">Instagram</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- AVAILABILITY -->
+<section style="background:var(--bg2);padding-top:0">
+    <div class="container">
+        <div class="avail-card fade-in">
+            <h3>🚀 Let's Build Something Secure</h3>
+            <div class="avail-items">
+                <div class="avail-item"><span class="check">✓</span> Open Source Collaboration</div>
+                <div class="avail-item"><span class="check">✓</span> Freelance Projects</div>
+                <div class="avail-item"><span class="check">✓</span> Security Consulting</div>
+                <div class="avail-item"><span class="check">✓</span> Speaking Opportunities</div>
+                <div class="avail-item"><span class="check">✓</span> AI Engineering</div>
+            </div>
+            <a href="mailto:pganeshkrishnareddy@gmail.com" class="btn btn-fill" style="margin:0 auto">Contact Me</a>
         </div>
     </div>
 </section>
