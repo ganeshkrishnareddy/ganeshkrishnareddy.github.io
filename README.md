@@ -20,7 +20,7 @@ P Ganesh Krishna Reddy - Portfolio
 
 ## Developer
 
-**P Ganesh Krishna Reddy** â€” Founder of [ProgVision](https://progvision.in)
+**P Ganesh Krishna Reddy** â€” Founder of [ProgVision](https://progvision.online)
 
 [![GitHub](https://img.shields.io/badge/GitHub-ganeshkrishnareddy-181717?style=flat-square&logo=github)](https://github.com/ganeshkrishnareddy)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-pganeshkrishnareddy-0A66C2?style=flat-square&logo=linkedin)](https://linkedin.com/in/pganeshkrishnareddy)
@@ -39,4 +39,4 @@ Your support helps maintain new features, documentation, security updates, and c
 
 ---
 
-*Built with passion by [P Ganesh Krishna Reddy](https://github.com/ganeshkrishnareddy) at [ProgVision](https://progvision.in)*
+*Built with passion by [P Ganesh Krishna Reddy](https://github.com/ganeshkrishnareddy) at [ProgVision](https://progvision.online)*
